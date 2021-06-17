@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>EkoCrate PopUp</title>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body style="background-image: url(download.png); background-size: 100%;">
+    <template id="popup-contents">
+      <swal-title>Please enter your information:</swal-title>
+      <swal-html>
+        <div class="form-container">
+          <input name="email" type="email" placeholder="Your Email" />
+          <p class="fyr-text">For your receipts & communications</p>
+          <div class="zip-container">
+            <div>
+              <input
+                name="drop_zip"
+                type="text"
+                placeholder="Drop off zip"
+                onKeyUp="validateZip(event)"
+                id="drop_zip"
+              />
+              <span id="drop_zip_msg"></span>
+            </div>
+            <div>
+              <input
+                name="pick_zip"
+                type="text"
+                placeholder="Pick up zip"
+                onKeyUp="validateZip(event)"
+                id="pick_zip"
+              />
+              <span id="pick_zip_msg"></span>
+            </div>
+          </div>
+        </div>
+      </swal-html>
+      <swal-param name="allowEscapeKey" value="false" />
+      <swal-param name="customClass" value='{ "popup": "popup-global" }' />
+    </template>
+  </body>
+  <script type="text/javascript">
+    function validateZip(ev) {
+      var zip = ev.target.value;
+      console.log("validateInput", zip);
+      if (/^\d{5}(-\d{4})?$/.test(zip)) {
+        message = "Valid Zip Code";
+      } else {
+        message = "Invalid Zip Code";
+      }
+      document.getElementById(ev.target.id + "_msg").innerHTML = message;
+      console.log(message);
+    }
+    Swal.fire({
+      template: "#popup-contents"
+    });
+  </script>
+</html>

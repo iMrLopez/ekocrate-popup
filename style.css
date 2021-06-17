@@ -1,0 +1,80 @@
+/* Containers */
+.popup-global {
+  width: 600px;
+  font-family: Arial;
+  border-radius: 24px;
+  border: 2px;
+  border-color: #e4e4e4;
+  background-color: #07437a;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.form-container {
+  text-align: center;
+  width: 90%;
+  margin: 0 auto;
+}
+
+/* Texts */
+.swal2-title {
+  font-weight: bold;
+  font-size: 42px;
+  color: white;
+}
+
+.fyr-text {
+  font-size: 10px;
+  color: white;
+}
+
+/* Global inputs */
+input {
+  width: 100%;
+  margin: 4px;
+  margin-top: 12px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  background: #fafafa;
+  color: #000;
+  font-size: 16px;
+  box-sizing: border-box;
+  border-radius: 2px;
+}
+
+button {
+  background: #85bf3f !important;
+  color: #fff;
+  padding: 8px 12px;
+  border: 0px;
+  -webkit-box-shadow: 0 -2px 0 rgba(0, 0, 0, 0.15) inset;
+  -moz-box-shadow: 0 -2px 0 rgba(0, 0, 0, 0.15) inset;
+  box-shadow: 0 -2px 0 rgba(0, 0, 0, 0.15) inset;
+  border-radius: 24px;
+  text-decoration: none;
+  display: inline-block;
+  width: 50%;
+  height: 100%;
+}
+
+/* Container of zip codes */
+.zip-container {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: space-around;
+  align-items: stretch;
+}
+
+.zip-container > div {
+  flex-grow: 1;
+}
+
+.zip-container > div {
+  margin: 2px;
+}
+
+.zip-container > div > span {
+  width: 20px;
+}
