@@ -1,64 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Demo - EkoCrate PopUp</title>
-  </head>
-  <body style="background-image: url(assets/bg.png); background-size: 100%;">
-    <!-- START COPY HERE * -->
-    <template id="popup-contents">
-      <swal-title>Please enter your information:</swal-title>
-      <swal-html>
-        <div class="form-container">
-          <div>
-            <input
-              onKeyUp="ValidateEmail(event)"
-              name="email"
-              type="email"
-              placeholder="Your Email"
-              id="email"
-            />
-            <div id="email_msg" class="validationBox"></div>
-          </div>
-          <p class="fyr-text">For your receipts & communications</p>
-          <div class="zip-container">
-            <div>
-              <input
-                name="drop_zip"
-                type="text"
-                placeholder="Drop off zip"
-                onKeyUp="validateZip(event)"
-                id="drop_zip"
-              />
-              <div id="drop_zip_msg" class="validationBox"></div>
-            </div>
-            <div>
-              <input
-                name="pick_zip"
-                type="text"
-                placeholder="Pick up zip"
-                onKeyUp="validateZip(event)"
-                id="pick_zip"
-              />
-              <div id="pick_zip_msg" class="validationBox"></div>
-            </div>
-          </div>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Demo - EkoCrate PopUp</title>
+</head>
+
+<body>
+  <!-- START COPY HERE * -->
+  <div class="popup-global">
+    <h1>Please enter your information:</h1>
+    <div class="form-container">
+      <div>
+        <input onKeyUp="ValidateEmail(event)" name="email" type="email" placeholder="Your Email" id="email" />
+        <div id="email_msg" class="validationBox"></div>
+      </div>
+      <p class="fyr-text">For your receipts & communications</p>
+      <div class="zip-container">
+        <div>
+          <input name="drop_zip" type="text" placeholder="Drop off zip" onKeyUp="validateZip(event)" id="drop_zip" />
+          <div id="drop_zip_msg" class="validationBox"></div>
         </div>
-      </swal-html>
-      <swal-button type="confirm" close>
-        Save my data
-      </swal-button>
-      <swal-param name="allowEscapeKey" value="false" />
-      <swal-param name="customClass" value='{ "popup": "popup-global" }' />
-    </template>
-    <link rel="stylesheet" href="assets/popup/style.css" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-firestore.js"></script>
-    <script type="text/javascript" src="assets/popup/logic.js" defer="defer"></script>
-    <!-- END COPY HERE * -->
-  </body>
+        <div>
+          <input name="pick_zip" type="text" placeholder="Pick up zip" onKeyUp="validateZip(event)" id="pick_zip" />
+          <div id="pick_zip_msg" class="validationBox"></div>
+        </div>
+      </div>
+    </div>
+    <button> Save my data</button>
+  </div>
+  <link rel="stylesheet" href="assets/popup/style.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-firestore.js"></script>
+  <script type="text/javascript" src="assets/popup/logic.js" defer="defer"></script>
+  <!-- END COPY HERE * -->
+</body>
+
 </html>
