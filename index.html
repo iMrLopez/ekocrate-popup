@@ -14,22 +14,22 @@
     <h1>Please enter your information:</h1>
     <div class="form-container">
       <div>
-        <input onKeyUp="ValidateEmail(event)" name="email" type="email" placeholder="Your Email" id="email" />
+        <input onKeyUp="validateFields()" name="email" type="email" placeholder="Your Email" id="email" />
         <div id="email_msg" class="validationBox"></div>
       </div>
       <p class="fyr-text">For your receipts & communications</p>
       <div class="zip-container">
         <div>
-          <input name="drop_zip" type="text" placeholder="Drop off zip" onKeyUp="validateZip(event)" id="drop_zip" />
+          <input name="drop_zip" type="text" placeholder="Drop off zip" onKeyUp="validateFields()" id="drop_zip" />
           <div id="drop_zip_msg" class="validationBox"></div>
         </div>
         <div>
-          <input name="pick_zip" type="text" placeholder="Pick up zip" onKeyUp="validateZip(event)" id="pick_zip" />
+          <input name="pick_zip" type="text" placeholder="Pick up zip" onKeyUp="validateFields()" id="pick_zip" />
           <div id="pick_zip_msg" class="validationBox"></div>
         </div>
       </div>
     </div>
-    <button> Save my data</button>
+    <button onclick="addDataToDb()"> Save my data</button>
   </div>
   <link rel="stylesheet" href="assets/popup/style.css" />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

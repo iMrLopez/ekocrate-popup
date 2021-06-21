@@ -52,6 +52,7 @@ input {
 }
 
 button {
+  margin-top: 12px;
   background: #85bf3f !important;
   color: #fff;
   padding: 12px;
