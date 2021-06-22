@@ -1,17 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <title>Demo - EkoCrate dataForm</title>
-
-</head>
-
-<body>
   <!-- START COPY HERE * -->
-
   <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-firestore.js"></script>
   <style>
@@ -209,7 +199,7 @@
     firebase.initializeApp(firebaseConfig);
 
   </script>
-  <div style="max-width: 600px; border-style: solid">
+  <div style="max-width: 600px;"> <!-- DELETE THIS IF NEEDED, THIS IS USED TO CONSTRAINT THE FORM TO A MAX WIDTH OF 600PX -->
     <div class="dataForm-global">
       <h1>Please enter your information:</h1>
       <div class="form-container">
@@ -233,9 +223,3 @@
       <button onclick="addDataToDb()">Check Delivery Eligibility</button>
     </div>
   </div>
-
-
-  <!-- END COPY HERE * -->
-</body>
-
-</html>
