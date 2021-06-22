@@ -18,14 +18,15 @@
     /* Containers */
     .dataForm-global {
       text-align: center;
-      width: 600px;
+      width: 100%;
       font-family: Arial;
       border-radius: 24px;
       border: 2px;
       border-color: #e4e4e4;
-      background-color: #07437a;
+      background-color: white;
       padding-top: 20px;
       padding-bottom: 20px;
+      color: #07437a;
     }
 
     .form-container {
@@ -37,18 +38,18 @@
     /* Texts */
     h1 {
       font-weight: bold;
-      font-size: 42px;
-      color: white;
+      font-size: 32px;
+      font-size: 4vw;
     }
 
     .fyr-text {
+      margin: 6px;
       font-size: 10px;
-      color: white;
+      font-size: 2vw;
     }
 
     .validationBox {
       width: 100% !important;
-      color: white !important;
       font-size: 10px !important;
       text-align: left;
       padding-left: 25px;
@@ -56,11 +57,12 @@
 
     /* Global inputs */
     input {
+      border: 20px;
       width: 100%;
       margin: 4px;
-      margin-top: 12px;
+      margin-top: 6px;
       padding: 12px;
-      border: 1px solid #ccc;
+      border: 1px solid gray;
       background: #fafafa;
       color: #000;
       font-size: 16px;
@@ -69,9 +71,9 @@
     }
 
     button {
-      margin-top: 12px;
+      margin-top: 6px;
       background: #85bf3f !important;
-      color: #fff;
+      color: #07437a;
       padding: 12px;
       border: 0px;
       -webkit-box-shadow: 0 -2px 0 rgba(0, 0, 0, 0.15) inset;
@@ -104,7 +106,21 @@
   </style>
   <script>
 
-    // TODO: CHANGE THE FOLLOWING 2 VARIABLES WITH THEIR ACTUAL PRODUCTION VALUES AND DELETE THIS COMMENT
+    // TODO: UNCOMMENT THE FOLLOWING 2 VARIABLES WITH THEIR ACTUAL PRODUCTION VALUES AND DELETE THIS COMMENT
+    /*
+    const firebaseConfig = {
+      apiKey: "AIzaSyDnooDng7gdZztB0EOgruhbTVK49oUDt2k",
+      authDomain: "ekocrate-customer-zips.firebaseapp.com",
+      projectId: "ekocrate-customer-zips",
+      storageBucket: "ekocrate-customer-zips.appspot.com",
+      messagingSenderId: "621460948643",
+      appId: "1:621460948643:web:b2dfdf6c7126c9c370e116",
+      measurementId: "G-14YLDB2TQ4"
+    }
+    const collection = 'ekocrate_users_zipcheck';
+    */
+
+
     const firebaseConfig = {
       apiKey: "AIzaSyDY7S3DFb3_ATZyEMnpUEVKxKRCQcd9nYw",
       authDomain: "myndsit.firebaseapp.com",
@@ -207,27 +223,31 @@
     firebase.initializeApp(firebaseConfig);
 
   </script>
-  <div class="dataForm-global">
-    <h1>Please enter your information:</h1>
-    <div class="form-container">
-      <div>
-        <input onKeyUp="validateFields()" name="email" type="email" placeholder="Your Email" id="email" />
-        <div id="email_msg" class="validationBox"></div>
-      </div>
-      <p class="fyr-text">For your receipts & communications</p>
-      <div class="zip-container">
+  <div style="max-width: 600px;">
+    <div class="dataForm-global">
+      <h1>Please enter your information:</h1>
+      <div class="form-container">
         <div>
-          <input name="drop_zip" type="text" placeholder="Drop off zip" onKeyUp="validateFields()" id="drop_zip" />
-          <div id="drop_zip_msg" class="validationBox"></div>
+          <input onKeyUp="validateFields()" name="email" type="email" placeholder="Your Email" id="email" />
+          <div id="email_msg" class="validationBox"></div>
         </div>
-        <div>
-          <input name="pick_zip" type="text" placeholder="Pick up zip" onKeyUp="validateFields()" id="pick_zip" />
-          <div id="pick_zip_msg" class="validationBox"></div>
+        <p class="fyr-text">For your receipts & communications</p>
+        <div class="zip-container">
+          <div>
+            <input name="drop_zip" type="text" placeholder="Drop off zip" onKeyUp="validateFields()" id="drop_zip" />
+            <div id="drop_zip_msg" class="validationBox"></div>
+          </div>
+          <div></div>
+          <div>
+            <input name="pick_zip" type="text" placeholder="Pick up zip" onKeyUp="validateFields()" id="pick_zip" />
+            <div id="pick_zip_msg" class="validationBox"></div>
+          </div>
         </div>
       </div>
+      <button onclick="addDataToDb()">Check Delivery Eligibility</button>
     </div>
-    <button onclick="addDataToDb()"> Save my data</button>
   </div>
+
 
   <!-- END COPY HERE * -->
 </body>
