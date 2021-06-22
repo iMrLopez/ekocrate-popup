@@ -45,7 +45,8 @@
     .fyr-text {
       margin: 6px;
       font-size: 10px;
-      font-size: 2vw;
+      font-size: 1vw;
+      text-align: left;
     }
 
     .validationBox {
@@ -84,6 +85,7 @@
       display: inline-block;
       width: 50%;
       height: 100%;
+      font-size: 20px;
     }
 
     /* Container of zip codes */
@@ -222,15 +224,15 @@
     firebase.initializeApp(firebaseConfig);
 
   </script>
-  <div style="max-width: 600px;">
+  <div style="max-width: 600px; border-style: solid">
     <div class="dataForm-global">
       <h1>Please enter your information:</h1>
       <div class="form-container">
+        <p class="fyr-text">For Your Receipts & Correspondence</p>
         <div>
           <input onKeyUp="validateFields()" name="email" type="email" placeholder="Your Email" id="email" />
           <div id="email_msg" class="validationBox"></div>
         </div>
-        <p class="fyr-text">For your receipts & communications</p>
         <div class="zip-container">
           <div>
             <input name="drop_zip" type="text" placeholder="Drop off zip" onKeyUp="validateFields()" id="drop_zip" />
