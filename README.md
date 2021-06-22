@@ -19,7 +19,7 @@ The idea is that the user would fill all the data, this data will be validated a
 ```javascript
     /zipcheck?beds=studio
     /zipcheck?beds=34
-    /zipcheck?beds=5+
+    /zipcheck?beds=5
     /zipcheck?beds=12
 ```
 (Notice the `?beds=` parameter, this is important for the site to know where to redirect the user)
