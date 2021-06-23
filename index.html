@@ -59,7 +59,7 @@
     border-radius: 2px;
   }
 
-  button {
+  .btn-savezip {
     margin-top: 6px;
     background: #85bf3f !important;
     color: #07437a;
@@ -92,6 +92,13 @@
 
   .zip-container>div {
     margin: 2px;
+  }
+
+  @media (hover:none),
+  (hover:on-demand) {
+    .hideOnMobile {
+      display: none;
+    }
   }
 </style>
 <script>
@@ -213,14 +220,14 @@
           <input name="drop_zip" type="text" placeholder="Drop off zip" onKeyUp="validateFields()" id="drop_zip" />
           <div id="drop_zip_msg" class="validationBox"></div>
         </div>
-        <div></div>
+        <div class="hideOnMobile"></div>
         <div>
           <input name="pick_zip" type="text" placeholder="Pick up zip" onKeyUp="validateFields()" id="pick_zip" />
           <div id="pick_zip_msg" class="validationBox"></div>
         </div>
       </div>
     </div>
-    <button onclick="addDataToDb()">Check Delivery Eligibility</button>
+    <button onclick="addDataToDb()" class="btn-savezip">Check Delivery Eligibility</button>
   </div>
 </div>
 <!-- * END COPY HERE * -->
