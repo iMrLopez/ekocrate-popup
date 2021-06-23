@@ -29,13 +29,11 @@
   h1 {
     font-weight: bold;
     font-size: 32px;
-    font-size: 4vw;
   }
 
   .fyr-text {
     margin: 6px;
     font-size: 10px;
-    font-size: 1vw;
     text-align: left;
   }
 
@@ -190,9 +188,10 @@
             zip_pick: document.getElementById("pick_zip").value,
             location: `${window.location.href}${redirectUserToSite()}`,
             timestamp: new Date().toISOString()
-          });
+          })
+          .then((docRef) => window.location.href = this.redirectUserToSite())
+          .catch((error) => window.location.href = this.redirectUserToSite());
       }
-      window.location.href = this.redirectUserToSite();
     }
   };
 

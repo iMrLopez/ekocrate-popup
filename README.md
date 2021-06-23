@@ -24,6 +24,27 @@ The idea is that the user would fill all the data, this data will be validated a
 ```
 (Notice the `?beds=` parameter, this is important for the site to know where to redirect the user)
 
+* You will need to modify your collection in Firestore to allow writing to it, so please add this rule just after the first bracket closure in firestore
+
+```
+  match /ekocrate_users_zipcheck/{id} {
+  	allow write: if true;
+  }
+```
+
+Your security rules should look something like this:
+
+```
+rules_version = '2';
+service cloud.firestore {
+    ...
+    match /ekocrate_users_zipcheck/{id} {
+        allow write: if true;
+    }
+}
+```
+
+(Adding this rule is strictly necessary to allow the script to write to your database)
 
 ## LIVE DEMO OF THE FORM
 
