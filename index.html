@@ -195,8 +195,9 @@
             zip_pick: document.getElementById("pick_zip").value,
             location: `${window.location.href}${getRedirectionUrl()}`,
             timestamp: new Date().toISOString()
-          }).then(() => window.location.href = this.getRedirectionUrl());
+          });
       }
+      window.location.href = this.getRedirectionUrl()
     }
   };
 
