@@ -24,7 +24,9 @@ The idea is that the user would fill all the data, this data will be validated a
 ```
 (Notice the `?beds=` parameter, this is important for the site to know where to redirect the user)
 
-* You will need to modify your collection in Firestore to allow writing to it, so please add this rule just after the first bracket closure in firestore
+* You will need to modify your database rules in Firestore to allow writing to it.
+* * Go to your `Firestore Database` tab and click on `Rules`
+* * Add the following rule just before the last closing bracket in your rules
 
 ```
   match /ekocrate_users_zipcheck/{id} {
@@ -44,7 +46,8 @@ service cloud.firestore {
 }
 ```
 
-(Adding this rule is strictly necessary to allow the script to write to your database)
+(Adding this rule is strictly necessary to allow the script to write to your database).
+(This rule only enables writing to `ekocrate_users_zipcheck`, this, in order to make sure your db doesnt get open to the public).
 
 ## LIVE DEMO OF THE FORM
 
