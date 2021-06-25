@@ -193,7 +193,7 @@
             email: document.getElementById("email").value,
             zip_drop: document.getElementById("drop_zip").value,
             zip_pick: document.getElementById("pick_zip").value,
-            location: `${window.location.href}${getRedirectionUrl()}`,
+            location: `${getRedirectionUrl().split('/')[0]}`,
             timestamp: new Date().toISOString()
           });
       }
