@@ -154,9 +154,9 @@
   }
 
   // Redirect the user to the right address
-  function getRedirectionUrl() {
+  function performRedirection() {
     let target = '/';
-    if (!getZipsServiceArea()[0]  || !getZipsServiceArea()[1]) {
+    if (!getZipsServiceArea()[0] || !getZipsServiceArea()[1]) {
       target = '/out-of-area';
     } else {
       if (getZipsServiceArea()[0] === getZipsServiceArea()[1]) {
@@ -178,7 +178,7 @@
         target = '/delivery-fee';
       }
     }
-    return target;
+    window.location.href = target;
   }
 
   // Actually adding the data to firestore
@@ -193,11 +193,10 @@
             email: document.getElementById("email").value,
             zip_drop: document.getElementById("drop_zip").value,
             zip_pick: document.getElementById("pick_zip").value,
-            location: `${getRedirectionUrl().split('/')[0]}`,
+            bedrooms: `${new URLSearchParams(window.location.search).get('beds')}`,
             timestamp: new Date().toISOString()
-          });
+          }).then(() => performRedirection()).catch(() => performRedirection());
       }
-      window.location.href = this.getRedirectionUrl()
     }
   };
 
