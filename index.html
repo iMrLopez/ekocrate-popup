@@ -196,6 +196,8 @@
             bedrooms: `${new URLSearchParams(window.location.search).get('beds')}`,
             timestamp: new Date().toISOString()
           }).then(() => performRedirection()).catch(() => performRedirection());
+      } else {
+         performRedirection();
       }
     }
   };
