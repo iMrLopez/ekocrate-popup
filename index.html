@@ -185,20 +185,16 @@
   const addDataToDb = () => {
     this.validateFields();
     if (fieldsAreValid()) {
-      if (getZipsServiceArea()[0] && getZipsServiceArea()[1]) { // Check if the zips are in the service area
-        firebase
-          .firestore()
-          .collection(collection)
-          .add({
-            email: document.getElementById("email").value,
-            zip_drop: document.getElementById("drop_zip").value,
-            zip_pick: document.getElementById("pick_zip").value,
-            bedrooms: `${new URLSearchParams(window.location.search).get('beds')}`,
-            timestamp: new Date().toISOString()
-          }).then(() => performRedirection()).catch(() => performRedirection());
-      } else {
-         performRedirection();
-      }
+      firebase
+        .firestore()
+        .collection(collection)
+        .add({
+          email: document.getElementById("email").value,
+          zip_drop: document.getElementById("drop_zip").value,
+          zip_pick: document.getElementById("pick_zip").value,
+          bedrooms: `${new URLSearchParams(window.location.search).get('beds')}`,
+          timestamp: new Date().toISOString()
+        }).then(() => performRedirection()).catch(() => performRedirection());
     }
   };
 
